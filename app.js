@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 var expressNunjucks = require('express-nunjucks');
 
-var expressSession = require('express-session');
+var session = require('express-session');
 var passport = require('passport');
 require('./config/passport');
 
@@ -46,7 +46,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', auth);
-app.use('/tarefas', tarefas);
+app.use('/', tarefas);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
